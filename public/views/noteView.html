@@ -1,0 +1,25 @@
+<div>
+<form class="well">
+        <label>Content</label>
+        <input type="text" name="content" ng-model="notelist.ncontent" />
+        <label>userId</label>
+        <input type="text" name="userId" ng-model="notelist.userId" />
+        <label>tagId</label>
+        <input type="text" name="tagId" ng-model="notelist.tagId" />
+        <label>categoryId</label>
+        <input type="text" name="categoryId" ng-model="notelist.categoryId" />
+        
+        <br/>
+        <input type="hidden" ng-model="notelist.id" />
+        <input type="button" value="Save" ng-click="notelist.saveNote()" class="btn btn-primary" />
+</form>
+
+</div>
+<li class="list-group-item" ng-repeat="note in notelist.notes track by $index">
+   <div id=note{{note.id}}>
+    <h4>{{note.content}}</h4>
+     <td> <a href="javascript:void(0)" ng-click="notelist.updateNote(note.id)">edit</a> |  <button class="btn btn-danger" ng-click="notelist.delete(note.id)" >delete</button>
+    </td>
+   </div> 
+</li>
+

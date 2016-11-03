@@ -17,8 +17,17 @@ Route::get('/', function () {
     return view('index');
 });
 
+
 Route::group(['prefix' => 'api'], function()
 {
     Route::resource('authenticate', 'AuthenticateController', ['only' => ['index']]);
     Route::post('authenticate', 'AuthenticateController@authenticate');
+    Route::get('authenticate/user', 'AuthenticateController@getAuthenticatedUser');
+    Route::resource('note', 'NoteController');
+    Route::get('home', 'NoteController@home');
+
 });
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');

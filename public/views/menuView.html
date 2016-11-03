@@ -1,0 +1,12 @@
+<div class="col-sm-6 col-sm-offset-3">
+    <div class="well">
+        <h5 ng-if="authenticated">Welcome, {{currentUser.name}}
+        <h3>Users</h3>
+        <div class="buttons" style="margin-bottom: 10px">
+            <button class="btn btn-primary" ng-click="home.getUsers()">Get Users!</button>
+            <a href="/#/notes" >getNotes</a> 
+            <a href="/#/logout" >logout</a> 
+        </div>
+      </h5>
+    </div>
+</div>
