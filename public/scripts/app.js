@@ -14,7 +14,7 @@
 
             // Redirect to the auth state if any other states
             // are requested other than users
-            $urlRouterProvider.otherwise('/auth');
+          //  $urlRouterProvider.otherwise('/auth');
             
            // $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8'; 
 

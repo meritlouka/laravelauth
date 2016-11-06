@@ -2,10 +2,25 @@
 
 namespace App;
 
-use Illuminate\Foundation\Auth\User as Authenticatable;
+//use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model as Eloquent;
 
-class User extends Authenticatable
+use Zizaco\Entrust\Traits\EntrustUserTrait;
+use Illuminate\Auth\Authenticatable as AuthenticableTrait;
+//use Illuminate\Database\Eloquent\Model;
+use Illuminate\Auth\Passwords\CanResetPassword;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+//use Eloquent; 
+use Illuminate\Contracts\Auth\Authenticatable;
+//use Illuminate\Auth\Authenticatable as AuthenticableTrait;
+
+
+
+class User extends  Eloquent implements Authenticatable
 {
+   // use  EntrustUserTrait;
+    use AuthenticableTrait, CanResetPassword,EntrustUserTrait;
     /**
      * The attributes that are mass assignable.
      *
@@ -24,3 +39,4 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 }
+
